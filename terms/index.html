@@ -17,21 +17,13 @@
 
 :root {
     --background: #0d0e12;
-    --background-light: #12141a;
     --card: rgba(22, 24, 31, 0.82);
-    --card-hover: rgba(27, 29, 37, 0.92);
     --border: rgba(255, 255, 255, 0.07);
-    --border-light: rgba(255, 255, 255, 0.1);
     --text: #f1f1f4;
     --text-secondary: #a4a6b0;
     --text-muted: #70727c;
     --accent: #fac0fc;
     --accent-soft: rgba(250, 192, 252, 0.12);
-    --accent-glow: rgba(250, 192, 252, 0.18);
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
@@ -46,22 +38,24 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
-    background-size: 40px 40px;
-    mask-image: linear-gradient(to bottom, black, transparent 80%);
-}
-
 .wrapper {
     width: min(900px, calc(100% - 32px));
     margin: 0 auto;
-    padding: 70px 0 60px;
+    padding: 60px 0;
+}
+
+.top {
+    margin-bottom: 35px;
+}
+
+.back {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.back:hover {
+    color: var(--accent);
 }
 
 .header {
@@ -70,97 +64,58 @@ body::before {
 }
 
 .logo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     width: 54px;
     height: 54px;
-    margin-bottom: 22px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid rgba(250, 192, 252, 0.2);
     border-radius: 16px;
     background: rgba(250, 192, 252, 0.07);
     color: var(--accent);
     font-size: 22px;
     font-weight: 700;
-    box-shadow:
-        0 0 35px rgba(250, 192, 252, 0.08),
-        inset 0 0 20px rgba(250, 192, 252, 0.03);
 }
 
-.header h1 {
+h1 {
     font-size: clamp(30px, 5vw, 42px);
     line-height: 1.2;
-    font-weight: 700;
     letter-spacing: -1.2px;
 }
 
-.header h1 span {
+h1 span {
     color: var(--accent);
 }
 
 .subtitle {
-    max-width: 550px;
-    margin: 14px auto 0;
+    margin-top: 12px;
     color: var(--text-secondary);
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .updated {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    margin-top: 18px;
-    padding: 7px 12px;
+    display: inline-block;
+    margin-top: 15px;
+    padding: 6px 11px;
     border: 1px solid var(--border);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.025);
     color: var(--text-muted);
-    font-size: 12px;
+    font-size: 11px;
 }
 
-.updated::before {
-    content: "";
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 8px rgba(250, 192, 252, 0.6);
-}
-
-.terms-card {
-    position: relative;
-    overflow: hidden;
+.card {
     padding: 42px;
     border: 1px solid var(--border);
     border-radius: 24px;
-    background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.025), transparent 40%),
-        var(--card);
-    box-shadow:
-        0 25px 80px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    background: var(--card);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-}
-
-.terms-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(250, 192, 252, 0.35),
-        transparent
-    );
 }
 
 .section {
-    padding: 0 0 30px;
-    margin-bottom: 30px;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
     border-bottom: 1px solid var(--border);
 }
 
@@ -170,76 +125,50 @@ body::before {
     border-bottom: none;
 }
 
-.section-header {
+.section-title {
     display: flex;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 13px;
+    gap: 13px;
+    margin-bottom: 12px;
 }
 
 .number {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    width: 34px;
-    height: 34px;
     border: 1px solid rgba(250, 192, 252, 0.16);
     border-radius: 10px;
     background: var(--accent-soft);
     color: var(--accent);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
 }
 
-.section h2 {
+h2 {
     font-size: 18px;
     font-weight: 600;
-    letter-spacing: -0.3px;
 }
 
-.section p {
+p {
     color: var(--text-secondary);
     font-size: 14px;
 }
 
-.section p + p {
+p + p {
     margin-top: 10px;
 }
 
 .highlight {
-    display: inline-block;
     margin-top: 15px;
-    padding: 13px 16px;
+    padding: 12px 15px;
     border-left: 2px solid var(--accent);
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 9px 9px 0;
     background: rgba(250, 192, 252, 0.045);
     color: #c4c5cd;
     font-size: 13px;
-}
-
-.contact {
-    display: inline-flex;
-    align-items: center;
-    margin-top: 12px;
-    padding: 10px 14px;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.025);
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 500;
-    transition:
-        background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.contact:hover {
-    background: var(--accent-soft);
-    border-color: rgba(250, 192, 252, 0.2);
-    transform: translateY(-1px);
 }
 
 footer {
@@ -249,74 +178,32 @@ footer {
     font-size: 12px;
 }
 
-footer strong {
-    color: #999ba5;
-    font-weight: 500;
+footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--accent);
 }
 
 @media (max-width: 650px) {
     .wrapper {
         width: min(100% - 20px, 900px);
-        padding: 38px 0 35px;
+        padding: 35px 0;
     }
 
-    .header {
-        margin-bottom: 24px;
-    }
-
-    .logo {
-        width: 48px;
-        height: 48px;
-        border-radius: 14px;
-        margin-bottom: 18px;
-    }
-
-    .header h1 {
-        font-size: 30px;
-    }
-
-    .subtitle {
-        font-size: 14px;
-    }
-
-    .terms-card {
+    .card {
         padding: 27px 22px;
         border-radius: 19px;
     }
 
-    .section {
-        padding-bottom: 25px;
-        margin-bottom: 25px;
-    }
-
-    .section h2 {
+    h2 {
         font-size: 16px;
     }
 
-    .section p {
+    p {
         font-size: 13px;
-    }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .terms-card {
-        animation: appear 0.6s ease both;
-    }
-
-    .header {
-        animation: appear 0.5s ease both;
-    }
-
-    @keyframes appear {
-        from {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
     }
 }
 </style>
@@ -324,16 +211,17 @@ footer strong {
 
 <body>
 <main class="wrapper">
+    <div class="top">
+        <a class="back" href="../">← Wondering</a>
+    </div>
+
     <header class="header">
         <div class="logo">W</div>
 
-        <h1>
-            Условия <span>использования</span>
-        </h1>
+        <h1>Условия <span>использования</span></h1>
 
         <p class="subtitle">
             Правила использования Discord-бота Wondering.
-            Пожалуйста, ознакомьтесь с ними перед началом использования.
         </p>
 
         <div class="updated">
@@ -341,9 +229,9 @@ footer strong {
         </div>
     </header>
 
-    <article class="terms-card">
+    <article class="card">
         <section class="section">
-            <div class="section-header">
+            <div class="section-title">
                 <div class="number">01</div>
                 <h2>Общие положения</h2>
             </div>
@@ -361,7 +249,7 @@ footer strong {
         </section>
 
         <section class="section">
-            <div class="section-header">
+            <div class="section-title">
                 <div class="number">02</div>
                 <h2>Использование бота</h2>
             </div>
@@ -381,7 +269,7 @@ footer strong {
         </section>
 
         <section class="section">
-            <div class="section-header">
+            <div class="section-title">
                 <div class="number">03</div>
                 <h2>Конфиденциальность</h2>
             </div>
@@ -399,7 +287,7 @@ footer strong {
         </section>
 
         <section class="section">
-            <div class="section-header">
+            <div class="section-title">
                 <div class="number">04</div>
                 <h2>Изменение условий</h2>
             </div>
@@ -416,7 +304,7 @@ footer strong {
         </section>
 
         <section class="section">
-            <div class="section-header">
+            <div class="section-title">
                 <div class="number">05</div>
                 <h2>Контакты</h2>
             </div>
@@ -425,14 +313,14 @@ footer strong {
                 Если у вас есть вопросы по работе бота или настоящим
                 условиям, вы можете связаться с нами.
             </p>
-
-            <a class="contact" href="mailto:support@example.com">
-                support@example.com
-            </a>
         </section>
     </article>
 
     <footer>
+        <a href="../">Главная</a>
+        ·
+        <a href="../privacy/">Политика конфиденциальности</a>
+        <br><br>
         <strong>Wondering</strong> · Discord Bot
         <br>
         © 2026 Wondering. Все права защищены.
