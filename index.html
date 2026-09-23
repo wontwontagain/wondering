@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wondering — Условия использования</title>
-<meta name="description" content="Условия использования Discord-бота Wondering.">
+<title>Wondering — Discord Bot</title>
+<meta name="description" content="Wondering — Discord-бот для вашего сервера.">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -17,32 +17,26 @@
 
 :root {
     --background: #0d0e12;
-    --background-light: #12141a;
     --card: rgba(22, 24, 31, 0.82);
-    --card-hover: rgba(27, 29, 37, 0.92);
     --border: rgba(255, 255, 255, 0.07);
-    --border-light: rgba(255, 255, 255, 0.1);
     --text: #f1f1f4;
     --text-secondary: #a4a6b0;
     --text-muted: #70727c;
     --accent: #fac0fc;
     --accent-soft: rgba(250, 192, 252, 0.12);
-    --accent-glow: rgba(250, 192, 252, 0.18);
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background:
-        radial-gradient(circle at 50% -10%, rgba(250, 192, 252, 0.09), transparent 38%),
+        radial-gradient(circle at 50% -10%, rgba(250, 192, 252, 0.1), transparent 38%),
         radial-gradient(circle at 90% 90%, rgba(120, 100, 180, 0.07), transparent 35%),
         var(--background);
     color: var(--text);
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -55,198 +49,129 @@ body::before {
         linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
     background-size: 40px 40px;
-    mask-image: linear-gradient(to bottom, black, transparent 80%);
 }
 
-.wrapper {
-    width: min(900px, calc(100% - 32px));
-    margin: 0 auto;
-    padding: 70px 0 60px;
-}
-
-.header {
+.container {
+    width: min(700px, calc(100% - 32px));
     text-align: center;
-    margin-bottom: 38px;
 }
 
 .logo {
-    display: inline-flex;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 24px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 54px;
-    height: 54px;
-    margin-bottom: 22px;
     border: 1px solid rgba(250, 192, 252, 0.2);
-    border-radius: 16px;
+    border-radius: 21px;
     background: rgba(250, 192, 252, 0.07);
     color: var(--accent);
-    font-size: 22px;
+    font-size: 29px;
     font-weight: 700;
-    box-shadow:
-        0 0 35px rgba(250, 192, 252, 0.08),
-        inset 0 0 20px rgba(250, 192, 252, 0.03);
+    box-shadow: 0 0 45px rgba(250, 192, 252, 0.1);
 }
 
-.header h1 {
-    font-size: clamp(30px, 5vw, 42px);
-    line-height: 1.2;
-    font-weight: 700;
-    letter-spacing: -1.2px;
+h1 {
+    font-size: clamp(38px, 7vw, 58px);
+    letter-spacing: -2px;
 }
 
-.header h1 span {
+h1 span {
     color: var(--accent);
 }
 
-.subtitle {
-    max-width: 550px;
-    margin: 14px auto 0;
+.description {
+    max-width: 520px;
+    margin: 16px auto 30px;
     color: var(--text-secondary);
     font-size: 15px;
+    line-height: 1.7;
 }
 
-.updated {
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.button {
     display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    margin-top: 18px;
-    padding: 7px 12px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.025);
-    color: var(--text-muted);
-    font-size: 12px;
-}
-
-.updated::before {
-    content: "";
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 8px rgba(250, 192, 252, 0.6);
-}
-
-.terms-card {
-    position: relative;
-    overflow: hidden;
-    padding: 42px;
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.025), transparent 40%),
-        var(--card);
-    box-shadow:
-        0 25px 80px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.025);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-}
-
-.terms-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(250, 192, 252, 0.35),
-        transparent
-    );
-}
-
-.section {
-    padding: 0 0 30px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid var(--border);
-}
-
-.section:last-child {
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border-bottom: none;
-}
-
-.section-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 13px;
-}
-
-.number {
-    display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    width: 34px;
-    height: 34px;
-    border: 1px solid rgba(250, 192, 252, 0.16);
-    border-radius: 10px;
-    background: var(--accent-soft);
-    color: var(--accent);
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.section h2 {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: -0.3px;
-}
-
-.section p {
-    color: var(--text-secondary);
-    font-size: 14px;
-}
-
-.section p + p {
-    margin-top: 10px;
-}
-
-.highlight {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 13px 16px;
-    border-left: 2px solid var(--accent);
-    border-radius: 0 10px 10px 0;
-    background: rgba(250, 192, 252, 0.045);
-    color: #c4c5cd;
-    font-size: 13px;
-}
-
-.contact {
-    display: inline-flex;
-    align-items: center;
-    margin-top: 12px;
-    padding: 10px 14px;
+    min-width: 150px;
+    padding: 12px 18px;
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 11px;
     background: rgba(255, 255, 255, 0.025);
-    color: var(--accent);
+    color: var(--text);
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
-    transition:
-        background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+    transition: 0.2s ease;
 }
 
-.contact:hover {
+.button:hover {
+    transform: translateY(-2px);
     background: var(--accent-soft);
-    border-color: rgba(250, 192, 252, 0.2);
-    transform: translateY(-1px);
+    border-color: rgba(250, 192, 252, 0.22);
+}
+
+.button.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #171319;
+}
+
+.button.primary:hover {
+    background: #f8b6fa;
+    border-color: #f8b6fa;
+}
+
+.documents {
+    width: min(520px, 100%);
+    margin: 55px auto 0;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--card);
+    backdrop-filter: blur(18px);
+}
+
+.documents-title {
+    margin-bottom: 15px;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.links {
+    display: flex;
+    gap: 10px;
+}
+
+.link {
+    flex: 1;
+    padding: 11px;
+    border-radius: 10px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.2s ease;
+}
+
+.link:hover {
+    background: rgba(250, 192, 252, 0.06);
+    color: var(--accent);
 }
 
 footer {
-    padding-top: 28px;
-    text-align: center;
+    margin-top: 30px;
     color: var(--text-muted);
-    font-size: 12px;
+    font-size: 11px;
 }
 
 footer strong {
@@ -254,189 +179,62 @@ footer strong {
     font-weight: 500;
 }
 
-@media (max-width: 650px) {
-    .wrapper {
-        width: min(100% - 20px, 900px);
-        padding: 38px 0 35px;
+@media (max-width: 500px) {
+    .container {
+        width: min(100% - 22px, 700px);
     }
 
-    .header {
-        margin-bottom: 24px;
+    .links {
+        flex-direction: column;
     }
 
-    .logo {
-        width: 48px;
-        height: 48px;
-        border-radius: 14px;
-        margin-bottom: 18px;
-    }
-
-    .header h1 {
-        font-size: 30px;
-    }
-
-    .subtitle {
-        font-size: 14px;
-    }
-
-    .terms-card {
-        padding: 27px 22px;
-        border-radius: 19px;
-    }
-
-    .section {
-        padding-bottom: 25px;
-        margin-bottom: 25px;
-    }
-
-    .section h2 {
-        font-size: 16px;
-    }
-
-    .section p {
-        font-size: 13px;
-    }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .terms-card {
-        animation: appear 0.6s ease both;
-    }
-
-    .header {
-        animation: appear 0.5s ease both;
-    }
-
-    @keyframes appear {
-        from {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .documents {
+        padding: 18px;
     }
 }
 </style>
 </head>
 
 <body>
-<main class="wrapper">
-    <header class="header">
-        <div class="logo">W</div>
+<div class="container">
+    <div class="logo">W</div>
 
-        <h1>
-            Условия <span>использования</span>
-        </h1>
+    <h1>Wonder<span>ing</span></h1>
 
-        <p class="subtitle">
-            Правила использования Discord-бота Wondering.
-            Пожалуйста, ознакомьтесь с ними перед началом использования.
-        </p>
+    <p class="description">
+        Discord-бот с набором полезных инструментов для управления
+        сервером, автоматизации и удобного взаимодействия с сообществом.
+    </p>
 
-        <div class="updated">
-            Последнее обновление — 23 сентября 2026
-        </div>
-    </header>
+    <div class="buttons">
+        <a class="button primary" href="https://discord.com/oauth2/authorize">
+            Добавить бота
+        </a>
 
-    <article class="terms-card">
-        <section class="section">
-            <div class="section-header">
-                <div class="number">01</div>
-                <h2>Общие положения</h2>
-            </div>
+        <a class="button" href="https://discord.com">
+            Discord
+        </a>
+    </div>
 
-            <p>
-                Используя Discord-бота Wondering, вы подтверждаете,
-                что ознакомились с настоящими условиями и соглашаетесь
-                соблюдать их.
-            </p>
+    <div class="documents">
+        <div class="documents-title">Документы</div>
 
-            <div class="highlight">
-                Если вы не согласны с условиями использования,
-                пожалуйста, не используйте бота.
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-header">
-                <div class="number">02</div>
-                <h2>Использование бота</h2>
-            </div>
-
-            <p>
-                Wondering предоставляется «как есть». Мы стараемся
-                поддерживать стабильную работу бота, однако не
-                гарантируем отсутствие ошибок, временной недоступности
-                или других технических проблем.
-            </p>
-
-            <p>
-                Запрещается использовать бота для нарушения правил
-                Discord, законодательства или причинения вреда другим
-                пользователям и серверам.
-            </p>
-        </section>
-
-        <section class="section">
-            <div class="section-header">
-                <div class="number">03</div>
-                <h2>Конфиденциальность</h2>
-            </div>
-
-            <p>
-                Wondering может обрабатывать технические данные,
-                необходимые для работы отдельных функций бота.
-            </p>
-
-            <p>
-                Мы не продаём и не передаём персональные данные
-                пользователей третьим лицам без соответствующего
-                основания или согласия пользователя.
-            </p>
-        </section>
-
-        <section class="section">
-            <div class="section-header">
-                <div class="number">04</div>
-                <h2>Изменение условий</h2>
-            </div>
-
-            <p>
-                Мы можем время от времени изменять настоящие условия.
-                Обновлённая версия всегда публикуется на этой странице.
-            </p>
-
-            <p>
-                Продолжение использования Wondering после публикации
-                изменений означает принятие обновлённых условий.
-            </p>
-        </section>
-
-        <section class="section">
-            <div class="section-header">
-                <div class="number">05</div>
-                <h2>Контакты</h2>
-            </div>
-
-            <p>
-                Если у вас есть вопросы по работе бота или настоящим
-                условиям, вы можете связаться с нами.
-            </p>
-
-            <a class="contact" href="mailto:support@example.com">
-                @prostoktoto
+        <div class="links">
+            <a class="link" href="./terms/">
+                Условия использования
             </a>
-        </section>
-    </article>
+
+            <a class="link" href="./privacy/">
+                Политика конфиденциальности
+            </a>
+        </div>
+    </div>
 
     <footer>
         <strong>Wondering</strong> · Discord Bot
         <br>
         © 2026 Wondering. Все права защищены.
     </footer>
-</main>
+</div>
 </body>
 </html>
