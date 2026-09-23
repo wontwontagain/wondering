@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wondering — Политика конфиденциальности</title>
+<meta name="description" content="Политика конфиденциальности Discord-бота Wondering.">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: #0d0e12;
+    --card: rgba(22, 24, 31, 0.82);
+    --border: rgba(255, 255, 255, 0.07);
+    --text: #f1f1f4;
+    --text-secondary: #a4a6b0;
+    --text-muted: #70727c;
+    --accent: #fac0fc;
+    --accent-soft: rgba(250, 192, 252, 0.12);
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% -10%, rgba(250, 192, 252, 0.09), transparent 38%),
+        radial-gradient(circle at 90% 90%, rgba(120, 100, 180, 0.07), transparent 35%),
+        var(--background);
+    color: var(--text);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+    width: min(900px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.top {
+    margin-bottom: 35px;
+}
+
+.back {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.back:hover {
+    color: var(--accent);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.logo {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(250, 192, 252, 0.2);
+    border-radius: 16px;
+    background: rgba(250, 192, 252, 0.07);
+    color: var(--accent);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: clamp(30px, 5vw, 42px);
+    line-height: 1.2;
+    letter-spacing: -1.2px;
+}
+
+h1 span {
+    color: var(--accent);
+}
+
+.subtitle {
+    margin-top: 12px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.updated {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 6px 11px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.card {
+    padding: 42px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background: var(--card);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(18px);
+}
+
+.section {
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+}
+
+.section:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 12px;
+}
+
+.number {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(250, 192, 252, 0.16);
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+p + p {
+    margin-top: 10px;
+}
+
+ul {
+    margin: 12px 0 0 20px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+li + li {
+    margin-top: 7px;
+}
+
+.highlight {
+    margin-top: 15px;
+    padding: 12px 15px;
+    border-left: 2px solid var(--accent);
+    border-radius: 0 9px 9px 0;
+    background: rgba(250, 192, 252, 0.045);
+    color: #c4c5cd;
+    font-size: 13px;
+}
+
+footer {
+    padding-top: 28px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 650px) {
+    .wrapper {
+        width: min(100% - 20px, 900px);
+        padding: 35px 0;
+    }
+
+    .card {
+        padding: 27px 22px;
+        border-radius: 19px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    p,
+    ul {
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+<main class="wrapper">
+    <div class="top">
+        <a class="back" href="../">← Wondering</a>
+    </div>
+
+    <header class="header">
+        <div class="logo">W</div>
+
+        <h1>Политика <span>конфиденциальности</span></h1>
+
+        <p class="subtitle">
+            Информация о данных, которые может обрабатывать Discord-бот Wondering.
+        </p>
+
+        <div class="updated">
+            Последнее обновление — 23 сентября 2026
+        </div>
+    </header>
+
+    <article class="card">
+        <section class="section">
+            <div class="section-title">
+                <div class="number">01</div>
+                <h2>Общие положения</h2>
+            </div>
+
+            <p>
+                Настоящая политика описывает, какие данные может обрабатывать
+                Wondering при использовании его функций в Discord.
+            </p>
+
+            <p>
+                Мы стараемся собирать только те данные, которые необходимы
+                для正常ной работы соответствующих функций бота.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                <div class="number">02</div>
+                <h2>Какие данные могут обрабатываться</h2>
+            </div>
+
+            <p>
+                В зависимости от используемых функций Wondering может
+                обрабатывать следующие данные:
+            </p>
+
+            <ul>
+                <li>Discord ID пользователя;</li>
+                <li>Discord ID сервера;</li>
+                <li>Discord ID каналов и ролей;</li>
+                <li>настройки сервера, сохранённые для работы функций бота;</li>
+                <li>данные, необходимые для выполнения команд.</li>
+            </ul>
+
+            <div class="highlight">
+                Wondering не запрашивает у пользователей пароли Discord,
+                токены или платёжные данные.
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                <div class="number">03</div>
+                <h2>Использование данных</h2>
+            </div>
+
+            <p>
+                Получаемые данные используются исключительно для работы
+                функций Wondering и обеспечения корректной работы бота.
+            </p>
+
+            <p>
+                Например, настройки каналов, ролей и других функций могут
+                сохраняться для того, чтобы бот мог использовать их после
+                перезапуска.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                <div class="number">04</div>
+                <h2>Хранение данных</h2>
+            </div>
+
+            <p>
+                Данные хранятся только в течение периода, необходимого для
+                предоставления соответствующих функций, если иное не
+                требуется для технических или юридических целей.
+            </p>
+
+            <p>
+                Мы принимаем разумные меры для защиты хранимой информации
+                от несанкционированного доступа.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                <div class="number">05</div>
+                <h2>Передача третьим лицам</h2>
+            </div>
+
+            <p>
+                Мы не продаём персональные данные пользователей и не
+                передаём их третьим лицам для рекламных целей.
+            </p>
+
+            <p>
+                Передача информации может осуществляться только в случаях,
+                необходимых для работы сервиса, выполнения требований закона
+                или защиты безопасности сервиса и пользователей.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                <div class="number">06</div>
+                <h2>Удаление данных</h2>
+            </div>
+
+            <p>
+                Если вы хотите удалить данные, связанные с использованием
+                Wondering, вы можете обратиться к владельцу или
+                администрации проекта.
+            </p>
+
+            <p>
+                После проверки запроса соответствующие данные могут быть
+                удалены, если их дальнейшее хранение не требуется по
+                техническим или юридическим причинам.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                <div class="number">07</div>
+                <h2>Изменения политики</h2>
+            </div>
+
+            <p>
+                Эта политика может периодически обновляться. Новая версия
+                будет опубликована на данной странице с указанием даты
+                последнего обновления.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                <div class="number">08</div>
+                <h2>Контакты</h2>
+            </div>
+
+            <p>
+                По вопросам, связанным с конфиденциальностью и обработкой
+                данных, вы можете обратиться к администрации Wondering.
+            </p>
+        </section>
+    </article>
+
+    <footer>
+        <a href="../">Главная</a>
+        ·
+        <a href="../terms/">Условия использования</a>
+        <br><br>
+        <strong>Wondering</strong> · Discord Bot
+        <br>
+        © 2026 Wondering. Все права защищены.
+    </footer>
+</main>
+</body>
+</html>
